@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo de Bogotá – Localidades</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="mapa"></div>
+
+    <aside class="control-panel">
+        <h3>Mapa de Bogotá</h3>
+        <input id="buscador" type="search" placeholder="Buscar localidad…" autocomplete="off" />
+        <div id="lista-filtros"></div>
+        <label class="toggle">
+            <input id="toggle-calor" type="checkbox" checked />
+            Mostrar mapa de calor
+        </label>
+        <p class="hint">Haz clic en una localidad para ver su información.</p>
+    </aside>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
