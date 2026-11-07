@@ -60,18 +60,24 @@ oficiales descargados y convertidos por scripts reproducibles.
 - [x] 4. Sitio Leaflet con filtros, buscador y mapa de calor.
 - [x] 5. Workflow de GitHub Actions (build + deploy Pages + cron semanal).
 - [x] 6. README con reproducción.
-- [ ] 7. Crear repositorio público y subir archivos.
-- [ ] 8. Activar GitHub Pages (Source: GitHub Actions).
-- [ ] 9. Ejecutar el workflow end-to-end.
-- [ ] 10. Verificar el mapa publicado y documentar enlaces.
+- [x] 7. Crear repositorio público y subir archivos.
+- [x] 8. Activar GitHub Pages (Source: GitHub Actions).
+- [x] 9. Ejecutar el workflow end-to-end.
+- [x] 10. Verificar el mapa publicado y documentar enlaces.
 
 ## 6. Criterios de aceptación
 
-1. `python scripts/build.py` genera `data/localidades.geojson` con 20 features.
-2. El sitio carga sin errores y muestra las 20 localidades.
-3. El buscador y los filtros funcionan.
-4. El mapa de calor se puede activar/desactivar.
-5. GitHub Actions publica el sitio y la URL responde 200.
+1. `python scripts/build.py` genera `data/localidades.geojson` con 20 features. ✅
+2. El sitio carga sin errores y muestra las 20 localidades. ✅
+3. El buscador y los filtros funcionan. ✅
+4. El mapa de calor se puede activar/desactivar. ✅
+5. GitHub Actions publica el sitio y la URL responde 200. ✅
+
+## 7. Enlaces
+
+- **Repositorio:** https://github.com/anfelipeher12-debug/bogota-map
+- **Mapa publicado:** https://anfelipeher12-debug.github.io/bogota-map/
+- **Workflow:** https://github.com/anfelipeher12-debug/bogota-map/actions
 
 ---
 
