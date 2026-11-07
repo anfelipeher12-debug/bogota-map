@@ -52,7 +52,8 @@
 | `fetch('data/localidades.geojson')` no encontraba el archivo | `scripts/build.py` copia el GeoJSON a `site/data/` |
 | Faltaba la librería `leaflet.heat` | Se agregó el CDN en `site/index.html` |
 | `git`, `gh` y `pwsh` no están instalados en el entorno local | Se usa `curl.exe` + API REST de GitHub para crear repo/subir archivos |
-| El PAT fine-grained no tiene permiso de creación de repositorios | Requiere `Administration: write` / `Repository creation: write`; pendiente de actualizar por el usuario |
+| El PAT fine-grained no tenía permiso de creación de repositorios | Se usó un token clásico con scopes `repo` + `workflow` |
+| `curl.exe` con Schannel fallaba intermitentemente (HTTP 000, renegociación TLS) | Las llamadas a la API de GitHub se hicieron con Python `requests` (OpenSSL) |
 
 ## 6. Estimación de tokens
 
@@ -70,6 +71,19 @@
 - **Repositorio:** https://github.com/anfelipeher12-debug/bogota-map
 - **Mapa:** https://anfelipeher12-debug.github.io/bogota-map/
 - **Dataset:** https://datosabiertos.bogota.gov.co/dataset/localidad-bogota-d-c
+
+## 8. Cierre del despliegue
+
+- Repositorio creado vía API REST (token clásico `repo` + `workflow`).
+- 14 archivos subidos a la rama `main` mediante la API de contenidos.
+- GitHub Pages activado con `build_type: workflow`.
+- Workflow **“Construir datos y desplegar en GitHub Pages”** ejecutado con éxito
+  (run `42333122164`, jobs `build` y `deploy` en verde).
+- Verificación HTTP del sitio publicado:
+  - `/` → 200 (1040 bytes)
+  - `/script.js` → 200 (6016 bytes)
+  - `/style.css` → 200 (1822 bytes)
+  - `/data/localidades.geojson` → 200, **20 features**
 
 ---
 
